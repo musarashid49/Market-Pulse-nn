@@ -1,0 +1,38 @@
+# =============================================================================
+# .gitignore — market-pulse-nn
+# =============================================================================
+
+# Secrets — NEVER commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+*.egg-info/
+
+# Data (store on Drive / DVC, not Git)
+data/raw/
+data/processed/
+data/final/
+
+# Models (large files — use Git LFS or Drive)
+saved_models/*.pt
+saved_models/*.pth
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Reports (generated figures)
+reports/figures/*.png
+reports/figures/*.pdf

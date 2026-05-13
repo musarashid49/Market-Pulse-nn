@@ -1,0 +1,46 @@
+# =============================================================================
+# market-pulse-nn — Requirements
+# Environment: Python 3.11 | VS Code (local) + Google Colab A100 (training)
+# Install: pip install -r requirements.txt
+# Colab:   !pip install -r requirements.txt -q
+# =============================================================================
+
+# ── Data Collection ──────────────────────────────────────────────────────────
+yfinance==1.2.0             # Yahoo Finance OHLCV + metadata
+feedparser==6.0.11           # Reuters / financial RSS feeds
+praw==7.7.1                  # Reddit API (r/wallstreetbets, r/stocks, r/investing)
+tweepy==4.14.0               # Twitter/X API v2
+
+# ── NLP & Sentiment ──────────────────────────────────────────────────────────
+transformers==4.41.2         # FinBERT (ProsusAI/finbert) + Hugging Face Hub
+vaderSentiment==3.3.2        # Rule-based fallback sentiment (no GPU needed)
+tokenizers==0.19.1           # Fast tokenizer backend for transformers
+accelerate==0.30.1           # Optimised HF training on A100
+
+# ── Deep Learning ────────────────────────────────────────────────────────────
+torch==2.2.2                 # PyTorch (Colab A100: CUDA 12.1 build pre-installed)
+torchinfo==1.8.0             # Model summary (layer shapes, param counts)
+
+# ── Data Processing & Features ───────────────────────────────────────────────
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2          # Scalers, metrics, train/test split
+ta==0.11.0                   # Technical analysis: RSI, MACD, Bollinger Bands, ATR
+
+# ── Visualisation ────────────────────────────────────────────────────────────
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==5.22.0               # Interactive HTML charts for reports
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+python-dotenv==1.0.1         # Load .env API keys without hardcoding
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==5.2.1
+tqdm==4.66.4                 # Progress bars in loops
+pytz==2024.1                 # Timezone-aware timestamp handling
+
+# ── Notebook & Dev ───────────────────────────────────────────────────────────
+jupyter==1.0.0
+ipywidgets==8.1.2
+nbformat==5.10.4
