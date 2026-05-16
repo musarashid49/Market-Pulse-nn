@@ -7,8 +7,6 @@ financial news sentiment (Alpha Vantage, NewsData.io, Reuters RSS) and trains
 three sequential deep learning models (Vanilla RNN, LSTM, GRU) to predict
 next-day binary market direction.
 
-ANN Project — IEEE Format Report
-
 ---
 
 ## Overview
@@ -76,60 +74,6 @@ market-pulse-nn/
 ├── requirements.txt
 └── README.md
 ```
-
----
-
-## Setup
-
-### 1. Clone & install (local — VS Code / macOS)
-
-```bash
-git clone https://github.com/<your-org>/market-pulse-nn.git
-cd market-pulse-nn
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env   # then fill in your API keys
-```
-
-### 2. Configure API keys
-
-Edit `.env` with your Alpha Vantage and NewsData.io credentials.
-Both providers offer free tiers sufficient for reproduction.
-
-```env
-ALPHAVANTAGE_API_KEY=your_key_here
-NEWSDATA_API_KEY=your_key_here
-```
-
-Yahoo Finance and Reuters RSS require no authentication.
-
-### 3. Run notebooks in order
-
-| Notebook | Where to run | GPU needed |
-|---|---|---|
-| `01_data_ingestion.ipynb` | Local (VS Code) | No |
-| `02_sentiment_analysis.ipynb` | Local or Colab | Recommended for FinBERT |
-| `03_feature_engineering.ipynb` | Local (VS Code) | No |
-| `04_model_training.ipynb` | **Colab A100** | Yes |
-| `05_evaluation.ipynb` | Local or Colab | No |
-
-### 4. Colab setup (for Notebooks 02 & 04)
-
-```python
-# Cell 1 — Mount Drive
-from google.colab import drive
-drive.mount('/content/drive')
-
-# Cell 2 — Install deps
-!pip install -r /content/drive/MyDrive/market-pulse-nn/requirements.txt -q
-
-# Cell 3 — Add project to path
-import sys
-sys.path.insert(0, '/content/drive/MyDrive/market-pulse-nn')
-```
-
-`config.py` auto-detects the environment and resolves all paths to the
-mounted Drive folder when running on Colab.
 
 ---
 
@@ -219,18 +163,6 @@ real sentiment signal under free-tier API constraints).
 
 ---
 
-## Deliverables
-
-- GitHub repository with this codebase
-- IEEE-format Overleaf report covering Introduction, Methodology,
-  Dataset Overview, Model Architecture Diagrams, Results Comparison,
-  Challenges, Conclusion, and References
-- All generated figures in `reports/figures/`
-- Trained model checkpoints in `saved_models/`
-
----
-
 ## Authors
 
-Group members: *Muhammad Musa*
-Course: Artificial Neural Networks — FAST University CFD Campus
+*Muhammad Musa*
