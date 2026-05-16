@@ -1,4 +1,4 @@
-# market-pulse-nn
+# Real Time Market Prediction System 
 
 **Real-Time Market Movement Prediction using Sequential Deep Learning**
 
